@@ -15,5 +15,5 @@ The request should have the following parameters:
 |$template_id	| | $template_id|  
 
 
-[Click here](https://example.com](https://my.yegara.com/index.php?fuse=knowledgebase&controller=articles&view=article&articleId=8)https://my.yegara.com/index.php?fuse=knowledgebase&controller=articles&view=article&articleId=8) to visit the website offical documentation.
+Click here [https://yegara.com/sms.php] to visit the website offical documentation.
 
