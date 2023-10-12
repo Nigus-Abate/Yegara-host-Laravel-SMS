@@ -1,0 +1,26 @@
+# In this Laravel code, the Http facade is used to send an HTTP POST request to the specified URL ($server). The request body is serialized as JSON using the json_encode function. The withHeaders method is used to set the Content-Type header to 'application/json'. The response body is obtained using the body method, and the HTTP status code is obtained using the status method. Finally, the response is printed using print_r
+$to = '0915276873';
+$message = '12345';
+$template_id = 'otp';
+# fetch your username and password in app/config/yegarahostsms.php
+$server = 'https://sms.yegara.com/api2/send';
+$username = config('yegarahostsms.username');
+$password = config('yegarahostsms.password');
+
+$postData = [
+    'to' => $to,
+    'message' => $message,
+    'template_id' => $template_id,
+    'password' => $password,
+    'username' => $username,
+];
+$content = json_encode($postData);
+
+$response = Http::withHeaders([
+    'Content-Type' => 'application/json',
+])->post($server, $postData);
+
+$json_response = $response->body();
+$status = $response->status();
+
+print_r($json_response);
